@@ -20,22 +20,34 @@ public class ApplicationRunner {
             String line;
 
             while ((line = reader.readLine()) != null) {
-                if (line.startsWith("WIDTH")) {
-                    line = "WIDTH\t\t\t\t640";
-                } else if (line.startsWith("HEIGHT")) {
-                    line = "HEIGHT\t\t\t\t480";
-                } else if (line.startsWith("BPP")) {
-                    line = "BPP\t\t\t\t\t16";
-                } else if (line.startsWith("ALWAYS_VIEW_NAME")) {
-                    line = "ALWAYS_VIEW_NAME\t\t0";
-                } else if (line.startsWith("VIEW_CHAT")) {
-                    line = "VIEW_CHAT\t\t\t0";
-                } else if (line.startsWith("ENABLE_EFFECTS")) {
-                    line = "ENABLE_EFFECTS\t\t0";
-                } else if (line.startsWith("ENABLE_QUESTS")) {
-                    line = "ENABLE_QUESTS\t\t0";
-                } else if (line.startsWith("SHADOW_LEVEL")) {
-                    line = "SHADOW_LEVEL\t\t0";
+                   switch (line) {
+                        case "WIDTH":
+                            line = "WIDTH\t\t\t\t640";
+                            break;
+                        case "HEIGHT":
+                            line = "HEIGHT\t\t\t\t480";
+                            break;
+                        case "BPP":
+                            line = "BPP\t\t\t\t\t16";
+                            break;
+                        case "ALWAYS_VIEW_NAME":
+                            line = "ALWAYS_VIEW_NAME\t\t0";
+                            break;
+                        case "VIEW_CHAT":
+                            line = "VIEW_CHAT\t\t\t0";
+                            break;
+                        case "ENABLE_EFFECTS":
+                            line = "ENABLE_EFFECTS\t\t0";
+                            break;
+                        case "ENABLE_QUESTS":
+                            line = "ENABLE_QUESTS\t\t0";
+                            break;
+                        case "SHADOW_LEVEL":
+                            line = "SHADOW_LEVEL\t\t0";
+                            break;
+                        default:
+                            // Handle the case when the line does not match any of the above conditions
+                            break;
                 }
 
                 writer.write(line);
