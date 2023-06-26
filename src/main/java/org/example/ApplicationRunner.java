@@ -46,7 +46,6 @@ public class ApplicationRunner {
                             line = "SHADOW_LEVEL\t\t0";
                             break;
                         default:
-                            // Handle the case when the line does not match any of the above conditions
                             break;
                 }
 
